@@ -8,6 +8,7 @@ const TaskListContextProvider = ({children}) => {
         .getItem("tasks")) || [];
 
     const [tasks, setTasks] = useState(initialState);
+    const [completedTasks, setCompletedTasks] = useState([]);
     const [editItem, setEditItem] = useState(null);
 
     useEffect(() => {
@@ -15,11 +16,18 @@ const TaskListContextProvider = ({children}) => {
     }, [tasks]);
 
     const addTask = (title) => {
-        setTasks([...tasks, {id: Math.random()*1000, title: title}])
+        setTasks([...tasks,
+            {id: uuid(), title: title, completed: false}
+        ])
     };
 
     const removeTask = (id) => {
-        setTasks(tasks.filter(task => task.id !== id))
+        setTasks(tasks.filter(task => task.id !== id));
+    };
+
+    const completeTask = (id) => {
+        const item = tasks.find(task => task.id === id);
+        setCompletedTasks(...completedTasks, item);
     };
 
     const clearTasks = () => {
@@ -40,7 +48,8 @@ const TaskListContextProvider = ({children}) => {
 
     return (
         <TaskListContext.Provider value={{
-            tasks, addTask, removeTask, clearTasks, findItem, editTask, editItem
+            tasks, addTask, removeTask, clearTasks, findItem, editTask, editItem,
+            completeTask, completedTasks
         }}>
             {children}
         </TaskListContext.Provider>

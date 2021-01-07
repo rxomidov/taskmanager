@@ -23,7 +23,7 @@ const TaskForm = () => {
     useEffect(()=>{
         if (editItem){
             setTitle(editItem.title)
-            //console.log(editItem)
+            console.log(editItem)
         } else {
             setTitle("")
         }

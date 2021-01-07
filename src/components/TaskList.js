@@ -3,11 +3,11 @@ import {TaskListContext} from "../TaskListContext";
 import Task from "./Task";
 
 const TaskList = () => {
-    const {tasks} = useContext(TaskListContext);
+    const {tasks, completedTasks} = useContext(TaskListContext);
 
     return (
         <div>
-            {tasks.length > 0 ? (
+            {tasks.length ? (
                 <ul className="list">
                     {tasks.map((task) => (
                         <Task key={task.id} task={task}/>
@@ -16,7 +16,10 @@ const TaskList = () => {
             ) : (
                 <h1 className="no-tasks">No Tasks</h1>
             )}
-
+            {/*<div>Completed Tasks</div>*/}
+            {/*{completedTasks.map(task => (*/}
+            {/*    <div>{task.title}</div>*/}
+            {/*))}*/}
         </div>
     );
 };
