@@ -1,11 +1,77 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+button, input{
+  outline: none;
+}
+body{
+  background: #820c40;
+  font-family: 'Gill Sans MT Condensed', sans-serif;
+}
 .App {
   text-align: center;
+  width: 400px;
+  margin: 5rem auto;
+  background: #0d0138;
+  border-radius: 5px;
+  color: #999999;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.list{
+  padding: 2rem;
 }
+.list-item{
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px;
+}
+.list-item div{
+
+}
+.btn{
+  background: none;
+  color: #999999;
+  border: none;
+  padding: 10px;
+  transition: 0.3s;
+}
+.btn:hover{
+  filter: brightness(0.8);
+}
+.task-button{
+  padding: 8px 16px;
+  border-radius: 16px;
+  background: #820c40;
+  border: none;
+  margin: 1rem 1.2rem;
+  color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+.task-form input{
+  width: 70%;
+  border: 2px solid #999999;
+  border-radius: 16px;
+  padding: 8px 16px;
+  background: #0d0138;
+  color: #999999;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
+}
+.title{
+  padding: 4rem;
+  text-transform: capitalize;
+}
+.no-tasks{
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
